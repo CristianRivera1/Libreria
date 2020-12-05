@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EGG LIBRERIA</title>
+        
+        <!-- Colocar favicon en sitio -->
+       <link rel="shortcut icon" href="https://img.icons8.com/nolan/128/apple-seed.png" type="image/x-icon">
+
+        <!-- Fuente externa https://fonts.google.com/ -->
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+        
+        <!-- Mi hoja de estilos (Siempre la más relevante!) -->   
+        <link rel="stylesheet" href="estiloregistro.css">
+
+    </head>
+    <header></header>
+    <body>
+    
+        <section id="main-section">
+        <div class="page-bg" ></div>
+            <div id="intro" class="section1">
+                <h1 class="title" >LISTA DE AUTORES </h1>
+            </div>
+               <div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>EGG<span>Libreria</span></div>
+		</div> 
+         
+      <div class="section">
+      <table class="table table-striped table-dark" border="1">
+        
+        <thead>
+          <tr class="text-info">
+            <th  scope="col">Nombre y Apellido </th>
+            <th  scope="col">editar </th>
+            
+          
+          </tr>
+        </thead>
+        <tbody>
+          <tr  th:each="l : ${autor}">         
+          <td th:text="${l.nombre}" ></td> 
+          <td thref="/inicio"  class="form-grou">eliminar ></td>     
+         
+             
+          
+        </tr>
+        </tbody>
+                    
+  
+           
+       
+    </body>
+</html>

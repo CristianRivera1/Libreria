@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>EGG LIBRERIA</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="business-casual.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">EGG LIBRERIA</span>
+      <span class="site-heading-lower">LIBRERIA PUBLICA</span>
+    </h1>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="/perfil">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="/about">About</a>
+            </li>
+           
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">          
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-5">
+                <span class="section-heading-upper">Usuario</span>
+                <span class="section-heading-lower">MODIFICA TU USUARIO</span>
+              </h2>
+               
+         <div id="formulario" class="login">    
+                <form action="/modificarUsuario" method="POST" class="login" id="login" enctype="multipart/form-data">
+                   <p class = "Error" th:if="${error != null}" th:text="${error}"> </p>
+                   <input type="hidden" name="documento" th:value="${cliente.documento}">   
+                    <div class="form-group">
+                        <label for="foto">FOTO*</label>                        
+                      <img th:src="${cliente.foto.mime}">
+                        <input type="image" class="form-control" name="foto"  placeholder="foto" th:value="${cliente.foto.mime}" th:text="${cliente.foto.nombre}" >
+                    </div>             
+                    <div class="form-group">
+                        <label for="nombre">NOMBRE*</label>
+                        <input type="text" class="form-control" name="nombre"  placeholder="Nombre" th:value="${cliente.nombre}">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido" >APELLIDO*</label>
+                        <input type="text" class="form-control" name="apellido"  placeholder="Apellido" th:value="${cliente.apellido}">
+                    </div>
+                    <div class="form-group">
+                        <label for="domicilio">DOMICILIO*</label>
+                        <input type="text" class="form-control" name="domicilio"  placeholder="domicilio" th:value="${cliente.domicilio}"> 
+                    </div>
+                   
+                     <div class="form-group">
+                        <label for="telefono">TELEFONO*</label>
+                        <input type="number" class="form-control" name="telefono"  placeholder="telefono" th:value="${cliente.telefono}">
+                    </div>
+                     <div class="form-group">
+                        <label for="clave">CLAVE*</label>
+                        <input type="password" class="form-control" name="clave" placeholder="clave">
+                    </div>
+                   <div class="form-group">
+                     <br/><button type="submit" class="btn btn-primary">CAMBIAR DATOS</button> 
+                    </div>
+                    
+                </form>
+            </div>
+                
+              
+              <p class="address mb-5">
+                
+       
+                
+              </p>
+              <p class="mb-0">
+                <small>
+                  <em>Call Anytime</em>
+                </small>
+                <br>
+                (261) 6414755
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section about-heading">
+      <div class="container">
+        <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="img/about.jpg" alt="">
+        <div class="about-heading-content">
+          <div class="row">
+            <div class="col-xl-9 col-lg-10 mx-auto">
+              <div class="bg-faded rounded p-5">
+                <h2 class="section-heading mb-4">
+                   <span class="section-heading-upper">LIBRERIA EGG</span>
+                <span class="section-heading-lower">ACERCA DE NUESTRA LIBRERIA</span>
+                </h2>
+                <p>Fundado en 2018 por Cristian Rivera , nuestro emprendimiento ha estado prestando servicios desde hace dos años, portando la mejor variedad de libros que pueda existir.</p>
+              <p class="mb-0">Le garantizamos que caerá en el <em>mundo magico</em>de nuestros libros  en el momento en que ingrese hasta que salga de la pagina, Únase a nosotros para su rutina diaria, libros, novelas, cuentos infantiles..</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer text-faded text-center py-5">
+    <div class="container">
+      <p class="m-0 small">Copyright &copy; Cristian Rivera 2020</p>
+    </div>
+  </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script to highlight the active date in the hours list -->
+    <script>
+      $('.list-hours li').eq(new Date().getDay()).addClass('today');
+    </script>
+
+  </body>
+
+</html>
